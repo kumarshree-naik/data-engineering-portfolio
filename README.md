@@ -1,10 +1,11 @@
 # Data Engineering Portfolio
 
-*KUMARSHREE NAIK* — Data Engineer
+## Kumarshree Naik — Data Engineer
+
 M.Tech in Computer Science & Engineering, NIT Rourkela · GATE (CS) 2023 Qualified
 
 📍 Odisha, India
-📧 linkannaik40@gmail.com  · 💻 [GitHub](https://github.com/kumarshree-naik)
+📧 linkannaik40@gmail.com · 💻 [GitHub](https://github.com/kumarshree-naik)
 
 ---
 
@@ -107,3 +108,4 @@ data-engineering-portfolio/
 
 ---
 
+*This portfolio is actively being built. Follow along in [PROGRESS.md](./PROGRESS.md).*
