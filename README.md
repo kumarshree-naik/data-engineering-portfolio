@@ -1,6 +1,6 @@
 # Data Engineering Portfolio
 
-**Kumarshree Naik** — Data Engineer
+*Kumarshree Naik* — Data Engineer
 M.Tech in Computer Science & Engineering, NIT Rourkela · GATE (CS) 2023 Qualified
 
 📍 Odisha, India
