@@ -1,11 +1,6 @@
-# Day 5 Wrap-Up — Project 1 Complete
-
-
 # Project 1: Batch ETL Pipeline (NYC Taxi Data)
 
-An end-to-end batch ETL pipeline that ingests NYC Yellow Taxi trip data,
-cleans and transforms it, loads it into PostgreSQL, and orchestrates the
-whole workflow with Apache Airflow.
+An end-to-end batch ETL pipeline that ingests NYC Yellow Taxi trip data, cleans and transforms it, loads it into PostgreSQL, and orchestrates the whole workflow with Apache Airflow.
 
 ## Architecture
 ```
@@ -36,12 +31,9 @@ Source: NYC Taxi & Limousine Commission public data.
 - Busiest day: Wednesday · Quietest: Sunday
 
 ## Engineering Challenges Solved
-- **Memory constraints** — loading 2.84M rows exceeded available RAM; solved with
-  chunked batch loading via PostgreSQL COPY
-- **Dependency conflict** — pandas 3.0 and Airflow's SQLAlchemy 1.4 were incompatible
-  for `to_sql`; resolved by loading through a direct psycopg2 connection
-- **Orchestration setup** — configured Airflow in Codespaces (proxy fix, port
-  forwarding) and debugged task failures via Airflow logs
+- **Memory constraints** — loading 2.84M rows exceeded available RAM; solved with chunked batch loading via PostgreSQL COPY
+- **Dependency conflict** — pandas 3.0 and Airflow's SQLAlchemy 1.4 were incompatible for `to_sql`; resolved by loading through a direct psycopg2 connection
+- **Orchestration setup** — configured Airflow in Codespaces (proxy fix, port forwarding) and debugged task failures via Airflow logs
 
 ## How to Run
 ```bash
@@ -76,67 +68,3 @@ project-1-batch-etl/
 
 ## Status
 Complete — full ETL pipeline orchestrated with Airflow, all tasks passing.
-
----COPY ABOVE THIS LINE---
-
----
-
-## PART 2 — PROGRESS.md Day 5 Entry
-**Where it goes:** add this under the Day 4 entry in your root `PROGRESS.md`.
-
----COPY BELOW THIS LINE---
-
-### Day 5 — Orchestrate (Apache Airflow)
-- Installed Apache Airflow 2.9.3 and ran it in standalone mode
-- Wrote `taxi_etl_dag.py` — a DAG with 3 tasks: extract >> transform >> load
-- Configured Airflow in Codespaces (proxy fix, port forwarding for the web UI)
-- Debugged and solved real failures:
-  - Port collisions from lingering processes (force-killed and cleaned PID files)
-  - pandas 3.0 vs SQLAlchemy 1.4 conflict (rewrote load to use psycopg2 COPY)
-  - Memory limit on bulk load (chunked COPY at 200k rows/batch)
-- Result: full pipeline runs end-to-end in Airflow, all 3 tasks green
-- **Project 1 COMPLETE** — a working, orchestrated batch ETL pipeline
-
----COPY ABOVE THIS LINE---
-
----
-
-## PART 3 — Commit Commands
-**Run these in a terminal (not the one running Airflow):**
-
-```bash
-cd /workspaces/data-engineering-portfolio
-git add .
-git commit -m "Day 5: Project 1 complete - Airflow orchestration + final README"
-git push
-```
-
----
-
-## PART 4 — Add the Airflow screenshot to your repo (optional but recommended)
-1. Take a screenshot of the green Airflow Graph (all 3 tasks dark green).
-2. In the Codespace file explorer, create folder: `project-1-batch-etl/screenshots/`
-3. Drag the screenshot file into that folder (or upload it).
-4. Commit again:
-```bash
-git add .
-git commit -m "Add Airflow pipeline success screenshot"
-git push
-```
-
----
-
-## Project 1 — Done. What you built:
-- A real ETL pipeline: Extract -> Transform -> Load, orchestrated by Airflow
-- Processed ~3M rows, cleaned to 2.84M, loaded into PostgreSQL
-- Solved genuine engineering problems: memory limits, dependency conflicts, orchestration setup
-
-## Interview one-liners
-1. "I built an Airflow-orchestrated batch ETL pipeline processing ~3M NYC taxi trips."
-2. "I hit a pandas/SQLAlchemy version conflict and re-engineered the load to use psycopg2 COPY."
-3. "I solved memory limits with chunked bulk loading — a technique that scales to any data size."
-4. "The pipeline runs extract, transform, and load as scheduled Airflow tasks with retries."
-
----
-
-*Next: Project 2 — Big Data Processing with PySpark (Colab + BigQuery).*
