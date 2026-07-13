@@ -11,7 +11,7 @@ NYC TLC Yellow Taxi Trip Records (Parquet) — ~2.96M rows/month, 19 columns.
 Python · Pandas · PostgreSQL · Apache Airflow · Docker
 
 ## Status
-🚧 In progress — Day 2: ingestion & exploration complete (2.96M rows loaded).
+🚧 In progress — Day 3: transformation complete (2.84M clean rows, 4.2% removed).
 
 ## Pipeline Steps
 1. Ingest raw Parquet data
